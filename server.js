@@ -47,5 +47,11 @@ app.get('/webcam', function(req, res){
 
 });
 
+app.get('/design-analysis', function(req, res){
+
+  res.render('pages/design')
+
+})
+
 app.listen(PORT);
 console.log(PORT + ' is the magic port');
