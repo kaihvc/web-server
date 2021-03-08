@@ -37,7 +37,13 @@ app.get('/', function(req, res){
 
 app.get('/home', function(req, res){
 
-  res.render('/pages/prof');
+  res.render('pages/prof');
+
+});
+
+app.get('/webcam', function(req, res){
+
+  res.render('pages/webcam');
 
 });
 

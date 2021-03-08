@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Computer Vision</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="views/pages/resources/personal.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/views/pages/resources/stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Heading container -->
+    <div class="container">
+
+      <h1>Computer Vision</h1>
+
+      <div class="card card-body">
+
+        Here's some super-basic computer vision stuff! I plan to do some interesting
+        CV stuff with your video in the future - with your permission, of course.
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <!-- Video container -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-8">
+
+          <video class="video" autoplay="true" id="webcam">
+
+          </video>
+
+        </div>
+
+        <div class="col-4 my-auto">
+
+          <div class="btn btn-primary" type="button" onclick="toggleStream()">
+            Toggle video
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script>
+
+      var display = true
+      var video = document.getElementById("webcam");
+      var allowed = navigator.mediaDevices.getUserMedia
+
+      function toggleStream(){
+
+        if(display){
+
+          display = false;
+          video.srcObject = null;
+
+        }else{
+
+          if (allowed) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+              .then(function (stream) {
+                video.srcObject = stream;
+              })
+              .catch(function (err0r) {
+                console.log("Something went wrong!");
+              });
+          }
+
+          display = true;
+
+        }
+
+      }
+
+
+      if (allowed && display) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            video.srcObject = stream;
+          })
+          .catch(function (err0r) {
+            console.log("Something went wrong!");
+          });
+      }
+
+    </script>
+
+  </body>
