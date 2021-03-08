@@ -1,0 +1,25 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "a server to host things",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-ejs": "^1.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaihvc/web-server.git"
+  },
+  "author": "Kai Hueske-VanCeylon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaihvc/web-server/issues"
+  },
+  "homepage": "https://github.com/kaihvc/web-server#readme"
+}
